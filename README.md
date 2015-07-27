@@ -1,7 +1,8 @@
 # Zend Server Z-Ray Doctrine 2 plugin Shopware demo
 
-Welcome to the [Zend Server Z-Ray Doctrine 2 plugin](https://github.com/sandrokeil/Z-Ray-Doctrine2) Shopware demo. There are two installation methods. Please choose your
-prefered method. Windows user should choose *Install with vagrant*.
+Welcome to the [Zend Server Z-Ray Doctrine 2 plugin](https://github.com/sandrokeil/Z-Ray-Doctrine2) Shopware demo. 
+There are two installation methods. Please choose your prefered method. Windows user should choose 
+*Install with Vagrant*, but it works also for linux.
 
 ## Installation with Docker
 First ensure Docker and Docker Compose are installed. If not simply install these tools as root with:
@@ -18,10 +19,13 @@ $: docker-compose up -d
 Docker will now download all dependencies and starts the containers. This may take a while ...
 See official [Zend Server Z-Ray Doctrine 2 plugin site](https://github.com/sandrokeil/Z-Ray-Doctrine2) for some impressions.
 
-## Installation with vagrant
+## Installation with Vagrant
+
+> If you restart the Vagrant box, you must install the Doctrine 2 plugin and finish Shopware installation.
+
 Please install the following software if not already installed:
 
-* [Vagrant > 1.7](http://www.vagrantup.com/downloads.html)
+* [Vagrant > 1.7.3](http://www.vagrantup.com/downloads.html)
 * [Virtualbox > 4.3](https://www.virtualbox.org/wiki/Downloads)
 * [Vagrant docker-compose plugin](https://github.com/leighmcculloch/vagrant-docker-compose) (`vagrant plugin install vagrant-docker-compose`)
 
@@ -41,7 +45,7 @@ install button of the Doctrine 2 plugin.
 ![Zend Server Plugin Gallery](docs/img/plugin_gallery.png)
 
 ## Finish Shopware installation
-Now open [http://localhost](http://localhost/) and follow the Shopware install instructions.
+Now open [http://localhost:8080](http://localhost:8080/) and follow the Shopware install instructions.
 
 **Database credentials:**
 
@@ -54,9 +58,9 @@ Now open [http://localhost](http://localhost/) and follow the Shopware install i
 
 
 ### Install demo data
-After the installation open the Shopware backend [http://localhost/backend](http://localhost/backend) and install the 
+After the installation open the Shopware backend [http://localhost:8080/backend](http://localhost:8080/backend) and install the 
 demo data.
 
 ![Shopware demo data](docs/img/shopware_demo_data.png)
 
-Open the demo shop website [http://localhost](http://localhost) and check out the Z-Ray Doctrine 2 plugin.
+Open the demo shop website [http://localhost:8080](http://localhost:8080) and check out the Z-Ray Doctrine 2 plugin.

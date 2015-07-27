@@ -3,7 +3,7 @@
 
 # global configuration
 VAGRANTFILE_API_VERSION = "2"
-VAGRANT_BOX = "puphpet/debian75-x64"
+VAGRANT_BOX = "ubuntu/trusty64"
 VAGRANT_BOX_MEMORY = 2048
 VIRTUAL_BOX_NAME = "zraydoctrine2demo"
 
@@ -16,7 +16,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     config.vm.network :forwarded_port, guest: 80, host: 8080
     config.vm.network :forwarded_port, guest: 10081, host: 10081
 
-    config.vm.synced_folder ".", "/vagrant", disabled: true
+    config.vm.synced_folder ".", "/vagrant"
 
     # forward ssh requests for public keys
     config.ssh.forward_agent = true
@@ -31,7 +31,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
         vb.customize ["modifyvm", :id, "--memory", VAGRANT_BOX_MEMORY]
     end
 
-    Vagrant.configure("2") do |config|
-      config.vm.provision :docker_compose, yml: "/vagrant/docker-compose.yml", run: "always"
-    end
+    config.vm.provision :docker
+    config.vm.provision :docker_compose, yml: "/vagrant/docker-compose.yml", run: "always"
 end
