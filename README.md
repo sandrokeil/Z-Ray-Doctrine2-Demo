@@ -21,7 +21,8 @@ See official [Zend Server Z-Ray Doctrine 2 plugin site](https://github.com/sandr
 
 ## Installation with Vagrant
 
-> If you restart the Vagrant box, you must install the Doctrine 2 plugin and finish Shopware installation.
+> If you restart the Vagrant box, you must install the Doctrine 2 plugin and finish Shopware installation. To avoid this
+you can use `vagrant suspend`.
 
 Please install the following software if not already installed:
 
