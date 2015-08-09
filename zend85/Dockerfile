@@ -24,9 +24,8 @@ COPY ./scripts /usr/local/bin
 COPY ./libmysqlclient.so.18 /usr/lib/x86_64-linux-gnu/
 COPY ./Zray /usr/local/zend/var/plugins/
 
-RUN apt-get install -y unzip
-
-RUN rm -rf /var/www/html/* \
+RUN apt-get install -y unzip \
+    && rm -rf /var/www/html/* \
     && curl -o /tmp/shopware.zip -L http://releases.s3.shopware.com.s3.amazonaws.com/install_5.0.2_f003e4550105c830fc6ca87b340ffa0aba1ae969.zip \
     && unzip -o /tmp/shopware.zip -d /var/www/html \
     && curl -o /tmp/test_images.zip -L http://releases.s3.shopware.com/test_images.zip \
@@ -43,16 +42,14 @@ RUN rm -rf /var/www/html/* \
 COPY ./config.php /var/www/html/
 COPY ./vhost.conf /usr/local/zend/etc/sites.d/vhost_http_localhost_80.conf
 
-RUN ln -s /usr/local/zend/bin/php /bin/php
-
-RUN chmod 755 /var/www/html/config.php
-RUN chown www-data:www-data /var/www/html -R
-
-# fix shopware install issue
-RUN chmod +x /var/www/html/bin/console \
-    && echo "<?php exec('php /var/www/html/bin/console sw:generate:attributes'); exec('chown www-data:www-data /var/www/html -R'); ?>" >> /var/www/html/recovery/install/templates/configuration.php
-
-RUN mkdir -p /usr/local/zend/etc/sites.d/http/localhost/80
+RUN ln -s /usr/local/zend/bin/php /bin/php \
+    && chmod 755 /var/www/html/config.php \
+    && chown www-data:www-data /var/www/html -R \
+    && chmod +x /var/www/html/bin/console \
+    && echo "<?php exec('php /var/www/html/bin/console sw:generate:attributes'); exec('chown www-data:www-data /var/www/html -R'); ?>" >> /var/www/html/recovery/install/templates/configuration.php \
+    && mkdir -p /usr/local/zend/etc/sites.d/http/localhost/80 \
+    && echo "" >> /usr/local/zend/etc/php.ini \
+	&& echo "date.timezone = Europe/Berlin" >> /usr/local/zend/etc/php.ini
 
 EXPOSE 80
 EXPOSE 443

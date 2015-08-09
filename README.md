@@ -20,10 +20,6 @@ Docker will now download all dependencies and starts the containers. This may ta
 See official [Zend Server Z-Ray Doctrine 2 plugin site](https://github.com/sandrokeil/Z-Ray-Doctrine2) for some impressions.
 
 ## Installation with Vagrant
-
-> If you restart the Vagrant box, you must install the Doctrine 2 plugin and finish Shopware installation. To avoid this
-you can use `vagrant suspend`.
-
 Please install the following software if not already installed:
 
 * [Vagrant > 1.7.3](http://www.vagrantup.com/downloads.html)
@@ -34,7 +30,7 @@ Please install the following software if not already installed:
 $: vagrant up
 ```
 All dependencies will be downloaded. This may take a while ...
-See official [Zend Server Z-Ray Doctrine 2 plugin site](https://github.com/sandrokeil/Z-Ray-Doctrine2) for some impressions.
+See official [Zend Server Z-Ray Doctrine 2 plugin site](https://sandro-keil.de/blog/2015/01/27/doctrine-2-zend-server-z-ray-extension/) for some impressions.
 
 ## Install Z-Ray Doctrine 2 plugin
 If the installation process was successful, you can now open the Zend Server backend url 

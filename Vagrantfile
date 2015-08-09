@@ -13,7 +13,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     config.vm.hostname = VIRTUAL_BOX_NAME + ".dev"
 
     # configure vhost ports, more vhosts => more port forwarding definitions
-    config.vm.network :forwarded_port, guest: 80, host: 8080
+    config.vm.network :forwarded_port, guest: 8080, host: 8080
     config.vm.network :forwarded_port, guest: 10081, host: 10081
 
     config.vm.synced_folder ".", "/vagrant"
@@ -32,5 +32,5 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     end
 
     config.vm.provision :docker
-    config.vm.provision :docker_compose, yml: "/vagrant/docker-compose.yml", rebuild: false, run: "always"
+    config.vm.provision :docker_compose, compose_version: "1.4.0rc3", yml: "/vagrant/docker-compose.yml", rebuild: false, run: "always"
 end

@@ -1,7 +1,7 @@
 zendservershopware:
   build: ./zend85
   ports:
-    - 80:80
+    - 8080:80
     - 10081:10081
     - 10137:10137
   environment:
