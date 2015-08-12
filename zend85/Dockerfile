@@ -37,7 +37,8 @@ RUN apt-get install -y unzip \
     && chmod -R 755 /var/www/html/media \
     && chmod -R 755 /var/www/html/engine/Shopware/Plugins/Community \
     && rm /tmp/test_images.zip \
-    && rm /tmp/shopware.zip
+    && rm /tmp/shopware.zip \
+    && chown zend:zend /usr/local/zend/var/plugins/Docker -R
 
 COPY ./config.php /var/www/html/
 COPY ./vhost.conf /usr/local/zend/etc/sites.d/vhost_http_localhost_80.conf
