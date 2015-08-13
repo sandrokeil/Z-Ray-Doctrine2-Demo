@@ -34,7 +34,8 @@ See official [Zend Server Z-Ray Doctrine 2 plugin site](https://sandro-keil.de/b
 
 ## Install Z-Ray Doctrine 2 plugin
 If the installation process was successful, you can now open the Zend Server backend url 
-[http://localhost:10081](http://localhost:10081). The **password** is *admin*.
+[http://localhost:10081](http://localhost:10081). Please follow the instructions and ensure to use *development profile* 
+in order to enable Z-Ray.
 
 It's necessary to install the Doctrine 2 Z-Ray plugin from the Zend Server Z-Ray plugin gallery. Simply click on the 
 install button of the Doctrine 2 plugin.

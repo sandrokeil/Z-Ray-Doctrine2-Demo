@@ -4,8 +4,6 @@ zendservershopware:
     - 8080:80
     - 10081:10081
     - 10137:10137
-  environment:
-    - ZEND_ADMIN_PASSWORD=admin
   links:
     - mariadb
 
