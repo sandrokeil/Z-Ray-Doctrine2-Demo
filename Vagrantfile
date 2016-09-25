@@ -32,5 +32,5 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     end
 
     config.vm.provision :docker
-    config.vm.provision :docker_compose, compose_version: "1.4.0rc3", yml: "/vagrant/docker-compose.yml", rebuild: false, run: "always"
+    config.vm.provision :docker_compose, compose_version: "1.8.1", yml: "/vagrant/docker-compose.yml", rebuild: false, run: "always"
 end
